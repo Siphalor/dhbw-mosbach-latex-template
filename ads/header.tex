@@ -12,7 +12,7 @@
 	headsepline,		    % Line after header
 	footheight = 16pt,	    % Footer height
 	footsepline,		    % Line before footer
-	abstracton,		    % Abstract headline
+	abstract=true,		    % Abstract headline
 	DIV=calc,		    % Calculate print space
 	BCOR=8mm,		    % BCOR settings (Bindekorrektur)
 	headinclude=false,   % Exclude header from print space
@@ -104,6 +104,9 @@
 ]{hyperref}
 \usepackage{bookmark}
 \usepackage[nonumberlist,toc]{glossaries}
+\usepackage{etoc}
+\usepackage[hyphens]{url}
+\usepackage{etoolbox}
 
 % Generate glossary
 \makeglossaries{}
@@ -128,6 +131,8 @@
 	linktocpage=true, 
 	bookmarksnumbered=true 
 }
+% Urls should be able to have have automatic line breaks in them
+\appto\UrlBreaks{\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z}
 
 % Captions fontsize
 \addtokomafont{caption}{\small}
